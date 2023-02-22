@@ -8,6 +8,8 @@ public class BlueButton : MonoBehaviour
     public GameObject door2;
     public GameObject door3;
     public GameObject buttonInteractText;
+    public AudioSource AudioSource;
+    public AudioClip Audio;
 
     public bool inReach;
     public bool state = false;
@@ -41,6 +43,7 @@ public class BlueButton : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && inReach)
         {
+            AudioSource.PlayOneShot(Audio);
             if (state == false)
             {
                 door1.SetActive(false);

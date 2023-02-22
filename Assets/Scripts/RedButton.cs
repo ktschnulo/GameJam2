@@ -6,6 +6,8 @@ public class RedButton : MonoBehaviour
 {
     public GameObject door;
     public GameObject buttonInteractText;
+    public AudioSource AudioSource;
+    public AudioClip Audio;
 
     public bool inReach;
     public bool state = false;
@@ -37,8 +39,10 @@ public class RedButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.E) && inReach)
         {
+            AudioSource.PlayOneShot(Audio);
             if (state == true)
             {
                 door.SetActive(false);

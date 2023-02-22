@@ -8,8 +8,12 @@ public class GreenButton : MonoBehaviour
     public GameObject door2;
     public GameObject buttonInteractText;
 
+    public AudioSource AudioSource;
+    public AudioClip Audio;
     public bool inReach;
     public bool state = false;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +44,7 @@ public class GreenButton : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && inReach)
         {
+            AudioSource.PlayOneShot(Audio);
             if (state == true)
             {
                 

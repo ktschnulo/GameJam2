@@ -16,6 +16,10 @@ public class Keypad : MonoBehaviour
     public Text keypadTextObject;
     public string answer = "132";
 
+    public AudioSource AudioSource;
+    public AudioClip AudioRight;
+    public AudioClip AudioWrong;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,10 +35,12 @@ public class Keypad : MonoBehaviour
     {
         if (keypadTextObject.text == answer)
         {
+            AudioSource.PlayOneShot(AudioRight);
             keypadTextObject.text = "Correct";
         }
         else
         {
+            AudioSource.PlayOneShot(AudioWrong);
             keypadTextObject.text = "Wrong";
         }
     }
