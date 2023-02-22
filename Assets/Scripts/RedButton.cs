@@ -43,15 +43,15 @@ public class RedButton : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && inReach)
         {
             AudioSource.PlayOneShot(Audio);
-            if (state == true)
+            if (state == false)
             {
                 door.SetActive(false);
-                state = false;
+                state = true;
             }
             else
             {
                 door.SetActive(true);
-                state = true;
+                state = false;
             }
         }
     }
