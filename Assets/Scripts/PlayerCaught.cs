@@ -6,14 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class PlayerCaught : MonoBehaviour
 {
-    public static event Action OnPlayerDeath;
-    // Start is called before the first frame update
+    
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.gameObject.CompareTag("Barry"))
         {
             Debug.Log("Game Over");
+            Cursor.lockState = CursorLockMode.None; 
+            Cursor.visible = true;
             SceneManager.LoadScene(3);
+
         }
     }
 }
